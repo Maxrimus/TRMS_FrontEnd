@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="form-group">
+        <h3>Pending Applications</h3>
+      </div>
+      <ngb-tabset>
+          <ngb-tab title="Pending">
+            <ng-template ngbTabContent>
+                <div class="form-group">
+                  <table class="table">
+                    <tr>
+                      <td></td>
+                      <td>Employee ID</td>
+                      <td>Amount</td>
+                      <td></td>
+                    </tr>
+                    <tr *ngFor="let form of forms; let i = index" [attr.data-index]="i">
+                      <td>{{i}}</td>
+                      <td>{{form.employeeId}}</td>
+                      <td>{{form.compensation}}</td>
+                      <td><button class="btn btn-primary" [attr.appId]="form.applicationId" (click)="approve($event)">Approve</button></td>
+                      <td><button class="btn btn-primary" [attr.appId]="form.applicationId" (click)="deny($event)">Deny</button></td>
+                    </tr>
+                    <tr></tr>
+                  </table>
+                  <div class = "form-group d-flex align-items-center justify-content-center">
+                  </div>
+                </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

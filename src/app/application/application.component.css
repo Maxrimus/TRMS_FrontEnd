@@ -1,0 +1,18 @@
+div.inlined{
+    padding-left:0;
+    padding-right:0;
+    margin-right:0px;
+    margin-left:5px;
+}
+
+button{
+    margin-top:10px;
+}
+
+.container{
+    background:lightgrey;
+}
+
+.btn{
+    margin:4px;
+}

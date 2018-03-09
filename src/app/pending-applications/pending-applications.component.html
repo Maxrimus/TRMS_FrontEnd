@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="form-group">
+        <h3>Pending Applications</h3>
+      </div>
+      <div class="form-group">
+        <table class="table">
+          <tr>
+            <td></td>
+            <td>Amount</td>
+            <td>Supervisor Approval</td>
+            <td>Department Head</td>
+            <td>BenCo Approval</td>
+            <td></td>
+            <!-- <td>Proof</td> -->
+          </tr>
+          <tr *ngFor="let form of forms; let i = index" [attr.data-index]="i">
+            <td>{{i}}</td>
+            <td>${{form.compensation}}</td>
+            <td>{{form.supApproval}}</td>
+            <td>{{form.headApproval}}</td>
+            <td>{{form.benCoApproval}}</td>
+            <!-- <td><button class="btn btn-primary" [attr.appId]="form.applicationId" (click)="cancel($event)">Cancel</button></td> -->
+            <!-- <td><button class="btn btn-primary">Proof</button></td> -->
+          </tr>
+          <tr></tr>
+        </table>
+        <div class = "form-group d-flex align-items-center justify-content-center">
+          <div class = "btn btn-primary" (click)="goToDashboard()">Back to Dashboard</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class = "col-sm"><h1>Request for Reimbursement</h1></div>
+  </div>
+  <form (submit)="sendApplication($event)">
+      <div class="form-row">
+        <div class="col-sm">
+            <label for="employeeId" class="col-sm">Employee Id</label>
+            <input type="text" class="form-control col-sm" id="employeeId" readonly placeholder={{currentId}}/>
+          <label>Location</label>
+          <div class="form-group row inlined">
+            <label for="addressLine1" class="col-sm">Address Line 1:</label>
+            <input type="text" class="form-control col-sm" id="addressLine1"/>
+          </div>
+          <div class="form-group row inlined">
+            <label for="addressLine2" class="col-sm">Address Line 2:</label>
+            <input type="text" class="form-control col-sm" id="addressLine2"/>
+          </div>
+          <div class="form-group row inlined">
+            <label for="city" class="col-sm">City:</label>
+            <input type="text" class="form-control col-sm" id="city"/>
+          </div>
+          <div class="form-group row inlined">
+            <label for="state" class="col-sm">State/Region/Province:</label>
+            <input type="text" class="form-control col-sm" id="state"/>
+          </div>
+          <div class="form-group row inlined">
+            <label for="zip" class="col-sm">Zip/Postal Code:</label>
+            <input type="text" class="form-control col-sm" id="zip"/>
+          </div>
+          <div class="form-group row inlined">
+            <label for="country" class="col-sm">Country:</label>
+            <input type="text" class="form-control col-sm" id="country"/>
+          </div>
+        </div>
+        <div class="col-sm">
+            <label for="description">Event Description:</label>
+            <textarea rows="5" class="form-control" id="description"></textarea>
+            <label for="format">Grading Format:</label>
+            <select class="form-control" id="format">
+              <option>Graded</option>
+              <option>Presentation</option>
+              <option>Confirmation</option>
+            </select>
+            <label for="type">Event Type:</label>
+            <select class="form-control" id="type">
+              <option>University Course</option>
+              <option>Seminar</option>
+              <option>Certification Preperation Course</option>
+              <option>Certification</option>
+              <option>Technical Training</option>
+              <option>Other</option>
+            </select>
+            <label for="justification">Justification for Reimbursement:</label>
+            <textarea rows="2" class="form-control" id="justification"></textarea>
+        </div>
+        <div class="col-sm">
+          <!-- <div class="form-group">
+            <label for="attachments">Attachments:</label>
+            <input type="file" class="file" multiple data-msg-placeholder="Select {files} for upload...">
+          </div> -->
+          <div class="form-group">
+            <label for="date">Date and Time of Event:</label>
+            <p-calendar [ngModel]="value" name="calendar" showTime="true" hourFormat="24" id="date"></p-calendar>
+          </div>
+          <div class="form-group">
+            <label for="cost">Cost of Event:</label>
+            <input type="text" class="form-control" id="cost"/>
+          </div>
+          <div class="form-group">
+            <label for="compensation">Expected Compensation:</label>
+            <input type="text" class="form-control" id="compensation" readonly placeholder={{compensation}}/>
+          </div>    
+          <div class="alert alert-success" role="alert" *ngIf="submissionSent">Application Sent!</div>
+          <div class="alert alert-danger" role="alert" *ngIf="submissionFailed">Submission Failed</div>
+          <div class="d-flex align-items-center justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <div class = "btn btn-primary" (click)="goToDashboard()">Back to Dashboard</div>
+          </div>
+        </div>
+      </div>
+  </form>
+</div>

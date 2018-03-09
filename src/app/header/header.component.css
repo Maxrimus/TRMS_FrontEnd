@@ -1,0 +1,8 @@
+.container{
+    width:90%;
+}
+
+div.row{
+    min-height:50px;
+    background:grey;
+}
